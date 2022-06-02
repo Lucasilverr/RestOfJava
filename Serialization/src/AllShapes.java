@@ -12,6 +12,7 @@ public class AllShapes {
     private Line _line;
     private Circle _circle;
     private Polygon _polygon;
+    private Line _myLine;
 
     /**
      * Creates a bunch of shapes and fills them in the _shapes array.
@@ -19,20 +20,21 @@ public class AllShapes {
     public void createShapes() {
         _point = new Point(Color.RED, 40, 10);
         _line = new Line(Color.BLUE, 30, 15, 120, 80);
-        _circle = new Circle(Color.PINK, -100, 40, 60);
+        _circle = new Circle(Color.magenta, -100, 40, 60);
         _polygon = new Polygon(Color.GREEN,
                 new Point[] {
                         new Point(0, 0),
                         new Point(100, 0),
                         new Point(50, 80)
                 });
+        _myLine = new Line(Color.BLACK, 20, 40, 100, 90);
     }
 
     /**
      * Draws all the shapes on the canvas.
      */
     public void drawShapes(Canvas canvas) {
-        Shape[] _shapes = {_point, _line, _circle, _polygon };
+        Shape[] _shapes = {_point, _line, _circle, _polygon, _myLine };
         for (Shape s : _shapes) {
             s.draw(canvas);
         }
@@ -42,7 +44,7 @@ public class AllShapes {
      * Translates all shapes by a given amount on the x and y axis.
      */
     public void translateShapes(int dx, int dy) {
-        Shape[] _shapes = {_point, _line, _circle, _polygon };
+        Shape[] _shapes = {_point, _line, _circle, _polygon, _myLine };
         for(Shape s : _shapes) {
             s.translate(dx, dy);
         }
